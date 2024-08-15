@@ -22,7 +22,7 @@ export default function RootLayout({ children }: Readonly<IChildren>) {
     <html lang="en">
       <body
         className={cn(
-          "bg-slate-50 font-sans antialiased flex",
+          "bg-slate-100 font-sans antialiased flex",
           fontSans.variable
         )}
       >
