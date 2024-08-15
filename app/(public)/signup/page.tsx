@@ -14,7 +14,7 @@ export default function SignupPage() {
           Enter your basic details below to create your account
         </p>
       </div>
-      <div className="grid gap-6">
+      <div className="grid gap-6 overflow-auto">
         <SignupComponent />
       </div>
       <div className="text-center text-sm mt-2">
