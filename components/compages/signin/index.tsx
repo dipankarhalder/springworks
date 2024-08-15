@@ -44,45 +44,49 @@ export const SigninComponent = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input
-                  placeholder="you@example.com"
-                  {...field}
-                  className="h-12 px-5"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input
-                  type="password"
-                  placeholder="********"
-                  {...field}
-                  className="h-12 px-5"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <div className="text-right text-sm mt-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+        <div className="mb-4">
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    placeholder="you@example.com"
+                    {...field}
+                    className="h-12 px-5"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="mb-2">
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    type="password"
+                    placeholder="********"
+                    {...field}
+                    className="h-12 px-5"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="flex justify-end text-sm mb-6">
           <p>
             <Link
               href={forgot_page}
-              className="font-medium underline hover:text-blue-700"
+              className="font-medium text-xs underline hover:text-blue-700"
             >
               Forgot Password?
             </Link>
