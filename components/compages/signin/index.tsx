@@ -19,6 +19,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { forgot_page } from "@/lib/router";
 import { SigninSchema } from "@/validate/schema";
 
+import { _login } from "@/services";
+
 export const SigninComponent = () => {
   const { toast } = useToast();
 
@@ -30,9 +32,18 @@ export const SigninComponent = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof SigninSchema>) => {
+  const onSubmit = async (data: z.infer<typeof SigninSchema>) => {
     if (data) {
-      console.log(data);
+      try {
+        const response = await fetch(_login, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        await response.json();
+      } catch (error) {}
     } else {
       toast({
         variant: "destructive",
