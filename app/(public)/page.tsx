@@ -2,25 +2,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { login_page, register_page } from "@/lib/router";
 import { SigninComponent } from "@/components/compages/signin";
+import { SocialComponent } from "@/components/elements/social";
 
 export default function Home() {
   return (
-    <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
-      <div className="flex flex-col space-y-2 text-center mb-4">
-        <span className="flex justify-center mb-5">
+    <div className="mx-auto flex w-full flex-col justify-center space-y-5 sm:w-[400px]">
+      <div className="flex flex-col text-center mb-0">
+        <span className="flex justify-center mb-12">
           <Image
             src="/logo.png"
             alt="Springworks"
             className="dark:invert"
-            width={163}
-            height={30}
+            width={130}
+            height={24}
             priority
           />
         </span>
-        <h1 className="text-2xl font-semibold tracking-tight">Welcome Back!</h1>
-        <p className="text-sm text-muted-foreground">
-          Please sign in to continue
-        </p>
+        <h1 className="text-xl font-semibold tracking-tight mb-0">
+          Welcome Back!
+        </h1>
       </div>
       <div className="grid gap-6">
         <SigninComponent />
@@ -45,7 +45,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-        {/* <SocialComponent /> */}
+        <SocialComponent />
       </div>
       <p className="px-8 text-center text-sm text-muted-foreground leading-6">
         By clicking continue, you agree to our&nbsp;
@@ -66,16 +66,4 @@ export default function Home() {
       </p>
     </div>
   );
-}
-
-// import Image from "next/image";
-{
-  /* <Image
-  src="/vercel.svg"
-  alt="Vercel Logo"
-  className="dark:invert"
-  width={100}
-  height={24}
-  priority
-/> */
 }
