@@ -12,7 +12,6 @@ export default function Home() {
           <Image
             src="/logo.png"
             alt="Springworks"
-            className="dark:invert"
             width={130}
             height={24}
             priority
@@ -40,7 +39,7 @@ export default function Home() {
             <span className="w-full border-t"></span>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-slate-50 px-2 text-muted-foreground font-semibold text-xs">
+            <span className="bg-slate-100 px-2 text-muted-foreground font-semibold text-xs">
               Or continue with
             </span>
           </div>
@@ -50,14 +49,14 @@ export default function Home() {
       <p className="px-8 text-center text-sm text-muted-foreground leading-6">
         By clicking continue, you agree to our&nbsp;
         <Link
-          className="font-medium underline hover:text-blue-700"
+          className="font-medium underline text-blue-900 hover:text-blue-700"
           href={login_page}
         >
           Terms of Service
         </Link>
         &nbsp; and &nbsp;
         <Link
-          className="font-medium underline hover:text-blue-700"
+          className="font-medium underline text-blue-900 hover:text-blue-700"
           href={login_page}
         >
           Privacy Policy

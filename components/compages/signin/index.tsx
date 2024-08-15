@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -16,10 +17,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
-import { forgot_page } from "@/lib/router";
+import { forgot_page, profile } from "@/lib/router";
 import { SigninSchema } from "@/validate/schema";
 
 export const SigninComponent = () => {
+  const router = useRouter();
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof SigninSchema>>({
@@ -33,6 +35,7 @@ export const SigninComponent = () => {
   const onSubmit = (data: z.infer<typeof SigninSchema>) => {
     if (data) {
       console.log(data);
+      router.push(profile);
     } else {
       toast({
         variant: "destructive",
