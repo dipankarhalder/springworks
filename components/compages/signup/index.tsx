@@ -25,35 +25,74 @@ export const SignupComponent = () => {
   const form = useForm<z.infer<typeof SignupSchema>>({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
+      phone: "",
       password: "",
     },
   });
 
   const onSubmit = (data: z.infer<typeof SignupSchema>) => {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
+    if (data) {
+      console.log(data);
+    } else {
+      toast({
+        title: "You submitted the following values:",
+        description:
+          "The first name, last name, email or password you entered is incorrect.",
+      });
+    }
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <div className="mb-4">
+          <div className="flex gap-4">
+            <FormField
+              control={form.control}
+              name="firstName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      placeholder="First name"
+                      {...field}
+                      className="h-12 px-5"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="lastName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      placeholder="Last name"
+                      {...field}
+                      className="h-12 px-5"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+        <div className="mb-4">
           <FormField
             control={form.control}
-            name="username"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
                   <Input
-                    placeholder="Intellifix"
+                    placeholder="example@example.com"
                     {...field}
                     className="h-12 px-5"
                   />
@@ -66,12 +105,12 @@ export const SignupComponent = () => {
         <div className="mb-4">
           <FormField
             control={form.control}
-            name="email"
+            name="phone"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
                   <Input
-                    placeholder="example@example.com"
+                    placeholder="Phone no."
                     {...field}
                     className="h-12 px-5"
                   />
