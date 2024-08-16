@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export const HeaderVerification = () => {
   return (
-    <div className="mr-2">
+    <div className="mr-0">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button className="bg-transparent text-xs font-medium text-slate-900 hover:bg-slate-100">
