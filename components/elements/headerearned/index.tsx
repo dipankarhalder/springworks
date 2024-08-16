@@ -14,7 +14,7 @@ export const HeaderEarned = () => {
     <div className="mr-4">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="bg-transparent text-xs font-medium text-slate-900 hover:bg-slate-100">
+          <Button className="bg-transparent text-xs font-medium text-slate-900 hover:bg-slate-100 pl-3">
             <Image
               src="/ethereum.svg"
               alt="Etheruem"
@@ -24,7 +24,8 @@ export const HeaderEarned = () => {
               className="mr-1"
               priority
             />
-            1000 earned <ChevronDown size={16} className="ml-1" />
+            <span className="text-blue-600 font-bold">1000 Coins</span>
+            <ChevronDown size={16} className="ml-1" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-36">
