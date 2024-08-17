@@ -5,7 +5,11 @@ export default function PrivateLayout({ children }: Readonly<IChildren>) {
   return (
     <main className="flex flex-col w-full">
       <Header />
-      <div>{children}</div>
+      <div className="flex w-full">
+        <div className="container mx-auto">
+          <div className="flex w-full">{children}</div>
+        </div>
+      </div>
     </main>
   );
 }
